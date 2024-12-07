@@ -1,0 +1,10 @@
+# NetSurf cookies file.
+#
+# Lines starting with a '#' are comments, blank lines are ignored.
+#
+# All lines prior to "Version:	102" are discarded.
+#
+# Version	Domain	Domain from Set-Cookie	Path	Path from Set-Cookie	Secure	HTTP-Only	Expires	Last used	No destroy	Name	Value	Value was quoted	Scheme	URL	Comment
+Version:	102
+0	.youtube.com	1	/	1	1	1	1764852956	1730724970	0	__Secure-YEC	CgstdmVfQTVNSTBzVSjqiKO5BjIiCgJJVBIcEhgSFhMLFBUWFwwYGRobHB0eHw4PIBAREiEgNQ%3D%3D	0	unused	unused	
+0	.youtube.com	1	/	1	1	1	1764852970	1730724970	0	VISITOR_PRIVACY_METADATA	CgJJVBIcEhgSFhMLFBUWFwwYGRobHB0eHw4PIBAREiEgNQ%3D%3D	0	unused	unused	

@@ -1,0 +1,2 @@
+#!/bin/sh
+sensors | tail -n 7 | head -n 1

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<openbox_menu>
+
+<menu id="new menu 1" label="Menu">
+	<item label="Sakura">
+		<action name="Execute">
+			<command>/bin/sakura</command>
+		</action>
+	</item>
+	<item label="Kitty">
+		<action name="Execute">
+			<command>/bin/kitty</command>
+		</action>
+	</item>
+	<item label="Xterm">
+		<action name="Execute">
+			<command>/bin/xterm</command>
+		</action>
+	</item>
+</menu>
+
+<menu id="root-menu" label="Openbox 3">
+	<menu id="new menu 1"/>
+</menu>
+
+</openbox_menu>

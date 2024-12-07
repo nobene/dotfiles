@@ -1,0 +1,8 @@
+#!/usr/local/bin/yash
+
+while true;
+  do
+  /usr/bin/acpi -bt
+  echo
+  sleep 30;
+done;

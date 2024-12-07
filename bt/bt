@@ -1,0 +1,48 @@
+#!/usr/bin/sh
+
+while true;
+  do
+  cap=`cat /sys/class/power_supply/BATT/capacity`
+  stat=`cat /sys/class/power_supply/BATT/status`
+  printf "Battery: %s percent(s) and %s \n" $cap $stat
+  tempe=`cat /sys/class/thermal/thermal_zone0/temp | head -c 2`
+  printf "Temperature: %s°C" $tempe
+  echo "\n"
+  if [ "$stat" = "Charging" ]; then
+  sleep 30
+  continue
+  fi
+  if [ "$cap" = "15" ]; then
+  echo "battery at 15%, powering off..."
+  /sbin/poweroff
+  fi
+  if [ "$cap" = "14" ]; then
+  echo "battery at 14%, powering off..."
+  /sbin/poweroff
+  fi
+  if [ "$cap" = "13" ]; then
+  echo "battery at 13%, powering off..."
+  /sbin/poweroff
+  fi
+  if [ "$cap" = "12" ]; then
+  echo "battery at 12%, powering off..."
+  /sbin/poweroff
+  fi
+  if [ "$cap" = "11" ]; then
+  echo "battery at 11%, powering off..."
+  /sbin/poweroff
+  fi
+  if [ "$cap" = "10" ]; then
+  echo "battery at 10%, powering off..."
+  /sbin/poweroff
+  fi
+  if [ "$cap" = "9" ]; then
+  echo "battery at 9%, powering off..."
+  /sbin/poweroff
+  fi
+  if [ "$cap" = "8" ]; then
+  echo "battery at 8%, powering off..."
+  /sbin/poweroff
+  fi
+  sleep 30
+done;

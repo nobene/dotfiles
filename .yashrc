@@ -1,0 +1,90 @@
+
+if [ "$(id -u)" -eq 0 ]; then
+_uc='fyfi.' # red username for root
+_2c='fy.' # red PS2 for root
+else
+_uc=$_hc _hc= # same username color as hostname for non-root user
+_2c= # PS2 in normal color for non-root user
+fi
+
+case ${$(ps -o comm= -p $PPID 2>/dev/null)##*/} in
+  (kitty)
+    TERM=xterm-kitty
+#    . "${SETTINGSDIR:-$HOME/.settings}/setterm"
+    SHLVL=1
+    ;;
+  (gnome-terminal*)
+    TERM=gnome-256color
+#    . "${SETTINGSDIR:-$HOME/.settings}/setterm"
+    SHLVL=1
+    ;;
+esac
+if [ "/proc/$PPID/exe" -ef /usr/bin/mintty.exe ]; then
+  export TERM_PROGRAM=mintty
+fi
+
+_exit_status() {
+  case $1 in
+    0) return ;;
+    *) printf 'exit code: %d ' "$1" ;;
+  esac
+}
+
+alert() {
+  printf '\a'
+}
+
+mkcd() {
+  mkdir -p "$@" && cd "$1"
+}
+
+lk() {
+  cd "$(walk --icons "$@")"
+}
+
+alias g='| grep'
+alias j='jobs'
+alias --global L='|$PAGER'
+alias --global N='>/dev/null 2>&1' N1='>/dev/null' N2='2>/dev/null'
+alias cp="cp -i"
+alias df='df -h'
+alias free='free -m'
+alias gitu='git add . && git commit && git push'
+alias gipu='git push -u origin main'
+alias sx='startxfce4'
+alias aa='sudo aa-enforce firejail-default'
+alias ff='dbus-run-session firejail --apparmor /usr/bin/firefox'
+alias b9='sudo xbacklight =9'
+alias b20='sudo xbacklight =20'
+alias b5='sudo xbacklight =5'
+alias b4='sudo xbacklight =4'
+alias b3='sudo xbacklight =3'
+alias b2='sudo xbacklight =2'
+alias b15='sudo xbacklight =15'
+alias wk='/home/az/mycorrhiza/myco -listen-addr 127.0.0.1:9999 /home/az/wiki'
+alias vn='source ven/bin/activate'
+alias lw='dbus-run-session firejail --apparmor /usr/bin/librewolf'
+alias powe='sudo poweroff'
+alias rebo='sudo reboot'
+alias iton='sudo wg-quick up it2'
+alias itoff='sudo wg-quick down it2'
+alias ison='sudo wg-quick up is1'
+alias isoff='sudo wg-quick down is1'
+alias tt='sensors | grep crit | tail -n 1'
+#alias tt="paste <(cat /sys/class/thermal/thermal_zone*/type) <(cat /sys/class/thermal/thermal_zone*/temp) | column -s $'\t' -t | sed 's/\(.\)..$/.\1°C/'"
+
+PS1=$PS1'$(_exit_status $?)$(logname)@$(hostname):$(pwd) ==> '
+
+PS2='\fy.'"$PS2"
+
+trap 'echo SIGUSR1 received!!!' USR1
+
+FCEDIT=myd HISTFILE=~/.yahist HISTSIZE=5000 HISTRMDUP=1
+
+CDPATH=.:~:/usr/
+
+set --histspace
+
+set -o ignoreeof
+
+PROMPT_COMMAND='echo "\033]0;$(pwd) \007"'

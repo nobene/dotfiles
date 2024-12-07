@@ -1,0 +1,19 @@
+#!/usr/bin/sh
+
+rfkill block wifi
+rfkill block bluetooth
+rfkill list
+killall NetworkManager
+killall wpa_supplicant
+killall -r dhclient* &
+killall ssh-agent
+killall gpg-agent
+killall -r gvfs* &
+#ifconfig wlan0 down
+#killall nm-applet
+#killall nm-dispatcher
+killall wg-quick
+killall route
+killall bash
+#killall moused
+ping yahoo.com

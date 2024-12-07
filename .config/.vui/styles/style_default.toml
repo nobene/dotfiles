@@ -1,0 +1,91 @@
+# /home/az/.config/.vui/styles/style_default.toml generated automatically
+[window]
+bg_color = "#ecececff"
+[button]
+radius = 0.1
+border_color = "#c8c8c8ff"
+bg_color = "#ffffffff"
+bg_color_pressed = "#dbdbdbff"
+bg_color_hover = "#777777ff"
+text_font_name = "system"
+text_color = "#000000ff"
+text_size = 16
+text_align = 2
+text_vertical_align = 16
+[progressbar]
+color = "#5799f5ff"
+border_color = "#4c85d5ff"
+bg_color = "#dbdbdbff"
+bg_border_color = "#bfbfbfff"
+[slider]
+thumb_color = "#5799f5ff"
+bg_color = "#dbdbdbff"
+bg_border_color = "#bfbfbfff"
+focused_bg_border_color = "#ff0000ff"
+[dropdown]
+bg_color = "#f0f0f0ff"
+border_color = "#dfdfdfff"
+focus_color = "#323232ff"
+drawer_color = "#ffffffff"
+[checkbox]
+border_color = "#323232ff"
+bg_color = "#ffffffff"
+check_mode = "check"
+text_font_name = "system"
+text_color = "#000000ff"
+text_size = 16
+text_align = 1
+text_vertical_align = 8
+[radio]
+border_color = "#000000ff"
+bg_color = "#ffffffff"
+radio_mode = "radio"
+text_font_name = "system"
+text_color = "#000000ff"
+text_size = 16
+text_align = 1
+text_vertical_align = 8
+[rectangle]
+border_color = "#000000ff"
+color = "#00000001"
+text_font_name = "system"
+text_color = "#000000ff"
+text_size = 16
+text_align = 1
+text_vertical_align = 8
+[menu]
+border_color = "#7b7b7bff"
+bar_color = "#e6e6e6ff"
+bg_color = "#f0f0f0ff"
+bg_color_hover = "#dcdcdcff"
+text_font_name = "system"
+text_color = "#000000ff"
+text_size = 16
+text_align = 1
+text_vertical_align = 8
+[canvaslayout]
+bg_radius = 0.0
+bg_color = "#00000000"
+[stack]
+bg_radius = 0.0
+bg_color = "#00000000"
+[textbox]
+bg_radius = 0.0
+bg_color = "#ffffffff"
+[listbox]
+radius = 0.0
+border_color = "#808080ff"
+bg_color = "#ffffffff"
+bg_color_pressed = "#d3d3d3ff"
+bg_color_hover = "#add8e6ff"
+text_font_name = "system"
+text_color = "#000000ff"
+text_size = 16
+text_align = 1
+text_vertical_align = 8
+[label]
+text_font_name = "system"
+text_color = "#000000ff"
+text_size = 16
+text_align = 1
+text_vertical_align = 8
